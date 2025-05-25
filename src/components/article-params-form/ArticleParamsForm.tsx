@@ -7,6 +7,7 @@ import { ArrowButton } from 'src/ui/arrow-button';
 import { Button } from 'src/ui/button';
 import {
 	ArticleStateType,
+	defaultArticleState,
 	fontFamilyOptions,
 	fontColors,
 	backgroundColors,
@@ -38,6 +39,12 @@ export const ArticleParamsForm = ({
 		setSelectArticleState({ ...selectArticleState, [key]: value });
 	};
 
+	const handleReset = (e: React.FormEvent) => {
+		e.preventDefault();
+		setSelectArticleState(defaultArticleState);
+		setCurrentArticleState(defaultArticleState);
+	};
+
 	useOutsideClickClose({
 		isOpen,
 		rootRef,
@@ -56,7 +63,8 @@ export const ArticleParamsForm = ({
 					onSubmit={(e) => {
 						e.preventDefault();
 						setCurrentArticleState(selectArticleState);
-					}}>
+					}}
+					onReset={handleReset}>
 					<Text size={31} uppercase={true} weight={800}>
 						Задайте параметры
 					</Text>
