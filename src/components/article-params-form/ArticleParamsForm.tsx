@@ -7,11 +7,17 @@ import { ArrowButton } from 'src/ui/arrow-button';
 import { Button } from 'src/ui/button';
 import {
 	ArticleStateType,
+	fontFamilyOptions,
 	fontColors,
+	backgroundColors,
+	contentWidthArr,
+	fontSizeOptions,
 	OptionType,
 } from '../../constants/articleProps';
 import { Text } from 'src/ui/text';
 import { Select } from 'src/ui/select';
+import { RadioGroup } from 'src/ui/radio-group';
+import { Separator } from 'src/ui/separator';
 import { useOutsideClickClose } from 'src/ui/select/hooks/useOutsideClickClose';
 
 type ArticleParamsFormProps = {
@@ -55,11 +61,38 @@ export const ArticleParamsForm = ({
 						Задайте параметры
 					</Text>
 					<Select
+						selected={selectArticleState.fontFamilyOption}
+						options={fontFamilyOptions}
+						onChange={(option) => handleChange('fontFamilyOption', option)}
+						title='Шрифт'
+					/>
+					<RadioGroup
+						selected={selectArticleState.fontSizeOption}
+						options={fontSizeOptions}
+						onChange={(option) => handleChange('fontSizeOption', option)}
+						name='Размер шрифта'
+						title='Размер шрифта'
+					/>
+					<Select
 						selected={selectArticleState.fontColor}
 						options={fontColors}
 						onChange={(option) => handleChange('fontColor', option)}
 						title='Цвет шрифта'
 					/>
+					<Separator />
+					<Select
+						selected={selectArticleState.backgroundColor}
+						options={backgroundColors}
+						onChange={(option) => handleChange('backgroundColor', option)}
+						title='Цвет фона'
+					/>
+					<Select
+						selected={selectArticleState.contentWidth}
+						options={contentWidthArr}
+						onChange={(option) => handleChange('contentWidth', option)}
+						title='Ширина контента'
+					/>
+
 					<div className={styles.bottomContainer}>
 						<Button title='Сбросить' htmlType='reset' type='clear' />
 						<Button title='Применить' htmlType='submit' type='apply' />
