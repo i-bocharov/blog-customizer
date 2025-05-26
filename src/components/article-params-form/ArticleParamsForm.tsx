@@ -30,7 +30,7 @@ export const ArticleParamsForm = ({
 	currentArticleState,
 	setCurrentArticleState,
 }: ArticleParamsFormProps) => {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [isParamsFormOpen, setIsParamsFormOpen] = useState<boolean>(false);
 	const rootRef = useRef<HTMLDivElement>(null);
 	const [selectArticleState, setSelectArticleState] =
 		useState<ArticleStateType>(currentArticleState);
@@ -46,18 +46,23 @@ export const ArticleParamsForm = ({
 	};
 
 	useOutsideClickClose({
-		isOpen,
+		isOpen: isParamsFormOpen,
 		rootRef,
-		onClose: () => setIsOpen(false),
-		onChange: setIsOpen,
+		onClose: () => setIsParamsFormOpen(false),
+		onChange: setIsParamsFormOpen,
 	});
 
 	return (
 		<>
-			<ArrowButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+			<ArrowButton
+				isOpen={isParamsFormOpen}
+				onClick={() => setIsParamsFormOpen(!isParamsFormOpen)}
+			/>
 			<aside
 				ref={rootRef}
-				className={clsx(styles.container, { [styles.container_open]: isOpen })}>
+				className={clsx(styles.container, {
+					[styles.container_open]: isParamsFormOpen,
+				})}>
 				<form
 					className={styles.form}
 					onSubmit={(e) => {
