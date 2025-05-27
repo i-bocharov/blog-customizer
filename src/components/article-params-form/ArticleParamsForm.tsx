@@ -1,6 +1,6 @@
 import styles from './ArticleParamsForm.module.scss';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import clsx from 'clsx';
 
 import { ArrowButton } from 'src/ui/arrow-button';
@@ -44,10 +44,6 @@ export const ArticleParamsForm = ({
 		setSelectArticleState(defaultArticleState);
 		setCurrentArticleState(defaultArticleState);
 	};
-
-	useEffect(() => {
-		if (!isParamsFormOpen) return;
-	}, [isParamsFormOpen]);
 
 	useOutsideClickClose({
 		isOpen: isParamsFormOpen,
