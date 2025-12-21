@@ -4,14 +4,14 @@
 	"main": "index.js",
 	"license": "MIT",
 	"devDependencies": {
-		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
-		"@storybook/addon-essentials": "^8.0.5",
+		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.17",
+		"@storybook/addon-essentials": "^8.6.14",
 		"@storybook/addon-interactions": "^8.0.5",
 		"@storybook/addon-links": "^8.0.5",
 		"@storybook/addon-onboarding": "^8.0.5",
 		"@storybook/addon-styling-webpack": "^1.0.0",
 		"@storybook/addon-webpack5-compiler-swc": "^1.0.2",
-		"@storybook/blocks": "^8.0.5",
+		"@storybook/blocks": "^8.6.14",
 		"@storybook/react-webpack5": "^8.0.5",
 		"@storybook/test": "^8.0.5",
 		"@svgr/webpack": "^8.0.1",
@@ -45,7 +45,7 @@
 		"resolve-url-loader": "^5.0.0",
 		"sass": "^1.69.7",
 		"sass-loader": "^13.3.3",
-		"storybook": "^8.0.5",
+		"storybook": "^8.6.15",
 		"style-loader": "^3.3.3",
 		"stylelint": "^16.1.0",
 		"stylelint-config-standard-scss": "^13.0.0",
@@ -54,9 +54,9 @@
 		"typescript": "^5.0.4",
 		"typescript-plugin-css-modules": "^5.0.1",
 		"url-loader": "^4.1.1",
-		"webpack": "^5.81.0",
+		"webpack": "^5.104.1",
 		"webpack-cli": "^5.0.2",
-		"webpack-dev-server": "^4.15.0"
+		"webpack-dev-server": "^5.2.2"
 	},
 	"scripts": {
 		"build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.js --env env=prod",
